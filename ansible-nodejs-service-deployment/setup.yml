@@ -1,0 +1,10 @@
+---
+ - name: nodejs app deployment
+   hosts: servers
+   become: true
+       
+   roles:
+     - role: nodejs
+       tags: nodejs
+     - role: app
+       tags: app

@@ -1,0 +1,24 @@
+---
+# tasks file for app
+- name: Clone the repository
+  git:
+    repo: 'https://github.com/Toluwanee/nodejs-app.git'
+    dest: /var/www/nodeapp
+    version: main
+
+- name: Install dependencies
+  npm:
+    path: /var/www/nodeapp
+    state: present
+
+- name: Copy systemd service file
+  copy:
+    src: app.service
+    dest: /etc/systemd/system/app.service
+
+- name: Start and enable app service
+  systemd:
+    name: app
+    state: started
+    enabled: yes
+
