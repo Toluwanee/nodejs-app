@@ -43,7 +43,7 @@ The app is served on port 80, and the service is managed via systemd to ensure i
 
 ### 1. Clone the Repository
 
-```bash
+```
 git clone https://github.com/yourusername/node-service.git
 cd node-service
 ```
@@ -82,7 +82,7 @@ Ensure the Node.js app code is in a GitHub repository.
 
 Run the Ansible playbook to install dependencies, deploy the app, and configure the systemd service:
 ```
-ansible-playbook -i inventory.ini node_service.yml --tags app
+ansible-playbook -i inventory.ini setup.yml --tags app
 ```
 This will:
 
@@ -97,7 +97,7 @@ Set up the app to run as a systemd service (node-app).
 Start the app, ensuring it runs on port 80.
 
 
-### 5. SAccess the Application
+### 5. Access the Application
 Once the playbook has finished running, you should be able to access the Node.js app in your browser at:
 
 ```
